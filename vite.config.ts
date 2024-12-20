@@ -19,9 +19,9 @@ export default defineConfig({
   build: {
     lib: {
       entry: 'src/index.ts',
-      name: 'react-common-hooks',
+      name: 'react-core-hooks',
       formats: ['es', 'umd'],
-      fileName: (format) => `react-common-hooks.${format}.js`
+      fileName: (format) => `react-core-hooks.${format}.js`
     },
     emptyOutDir: false,
     sourcemap: false,

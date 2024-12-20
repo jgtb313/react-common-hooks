@@ -1,5 +1,5 @@
 {
-  "name": "react-common-hooks",
+  "name": "react-core-hooks",
   "version": "1.0.0",
   "author": "João <jgtb313@gmail.com>",
   "license": "MIT",
@@ -25,13 +25,13 @@
     "vite": "^5.3.5",
     "vite-plugin-dts": "^3.9.1"
   },
-  "main": "dist/react-common-hooks.umd.js",
-  "module": "dist/react-common-hooks.es.js",
+  "main": "dist/react-core-hooks.umd.js",
+  "module": "dist/react-core-hooks.es.js",
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
-      "require": "./dist/react-common-hooks.umd.js",
-      "import": "./dist/react-common-hooks.es.js"
+      "require": "./dist/react-core-hooks.umd.js",
+      "import": "./dist/react-core-hooks.es.js"
     }
   },
   "typings": "dist/index.d.ts",
