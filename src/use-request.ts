@@ -5,13 +5,13 @@ import { makeRequest, MakeRequestOptions } from './make-request'
 
 type UseRequestOptions<T, K> = {
   initialValues?: T
-} & MakeRequestOptions<T, K>
+}
 
 type UseRequestFetch<F extends (input: Parameters<F>[number]) => ReturnType<F>> = (
   input: {
     params: Parameters<F>[number]
     options?: Pick<MakeRequestOptions<Awaited<ReturnType<F>>, Parameters<F>[number]>, 'onPreFetch' | 'onSuccess' | 'onError' | 'onFinally'>
-  } & MakeRequestOptions<Awaited<ReturnType<F>>, Parameters<F>[number]>,
+  } & MakeRequestOptions<Awaited<ReturnType<F>>, Parameters<F>[number]>
 ) => Promise<Awaited<ReturnType<F>>>
 
 type UseRequestData<F extends (input: Parameters<F>[number]) => ReturnType<F>> = Awaited<ReturnType<F>>
@@ -24,7 +24,7 @@ type UseRequestResult<F extends (input: Parameters<F>[number]) => ReturnType<F>>
 
 export const useRequest = <F extends (input: Parameters<F>[number]) => ReturnType<F>>(
   handler: F,
-  opts?: UseRequestOptions<Awaited<ReturnType<F>>, Parameters<F>[number]>,
+  opts?: UseRequestOptions<Awaited<ReturnType<F>>, Parameters<F>[number]>
 ): [UseRequestFetch<F>, UseRequestResult<F>] => {
   const [data, setData] = useState<Awaited<ReturnType<F>> | undefined>(opts?.initialValues)
   const [loading, setLoading] = useState(false)
@@ -49,7 +49,7 @@ export const useRequest = <F extends (input: Parameters<F>[number]) => ReturnTyp
       onFinally: () => {
         setLoading(false)
         onFinally?.()
-      },
+      }
     })
 
     return value as never

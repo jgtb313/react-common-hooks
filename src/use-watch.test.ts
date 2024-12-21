@@ -1,5 +1,6 @@
 import { describe, it, expect, vi } from 'vitest'
-import { renderHook, act } from '@testing-library/react-hooks'
+import { act } from 'react'
+import { renderHook } from '@testing-library/react'
 
 import { useWatch } from './use-watch'
 
